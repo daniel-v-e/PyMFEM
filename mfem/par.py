@@ -40,6 +40,7 @@ from  mfem._par.linearform import *
 from  mfem._par.bilininteg import *
 from  mfem._par.gridfunc import *
 from  mfem._par.intrules import *
+from  mfem._par.intrules_cut import *
 from  mfem._par.fe import *
 from  mfem._par.ode import *
 from  mfem._par.bilinearform import *
@@ -121,6 +122,11 @@ import mfem._par.tmop_modules as tmop
 
 try:
     import mfem._par.dist_solver as dist_solver
+except:
+    pass
+
+try:
+    import mfem._par.navier_solver as navier_solver
 except:
     pass
 

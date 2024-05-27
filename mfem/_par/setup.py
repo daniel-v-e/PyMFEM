@@ -106,7 +106,8 @@ def get_extensions():
                "linearform", "vector", "lininteg", "complex_operator",
                "complex_fem",
                "gridfunc", "hybridization", "bilinearform",
-               "bilininteg", "intrules", "sparsemat", "densemat",
+               "bilininteg", "intrules", "intrules_cut",
+               "sparsemat", "densemat",
                "solvers", "estimators", "mesh_operators", "ode",
                "sparsesmoothers", "ncmesh",
                "matrix", "operators", "eltrans", "geom",
@@ -119,7 +120,8 @@ def get_extensions():
                "transfer", "dist_solver", "std_vectors", "auxiliary",
                "tmop", "tmop_amr", "tmop_tools", "qspace", "qfunction",
                "quadinterpolator", "quadinterpolator_face",
-               "submesh", "transfermap", "psubmesh", "ptransfermap"]
+               "submesh", "transfermap", "staticcond","sidredatacollection",
+               "psubmesh", "ptransfermap", "enzyme"]
 
     if add_pumi == '1':
         from setup_local import puminc, pumilib
@@ -138,6 +140,8 @@ def get_extensions():
     if add_cuda == '1':
         from setup_local import cudainc
         include_dirs.append(cudainc)
+    else:
+        modules.append("navier_solver")
 
     if add_libceed == '1':
         from setup_local import libceedinc
